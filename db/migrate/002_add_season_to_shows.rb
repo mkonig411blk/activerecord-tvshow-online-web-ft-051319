@@ -1,10 +1,6 @@
-class AddSeasonToShows < ActiveRecord::Migration[4.2]
+class AddSeasonToShows < ActiveRecord::Migration[5.2]
   def change
-    add_column :shows do |t|
-      t.string :name
-      t.string :network
-      t.string :day 
-      t.integer :rating
+    add_column :shows, :season, :string 
     end
   end
 end
