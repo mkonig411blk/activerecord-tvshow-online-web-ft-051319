@@ -7,6 +7,7 @@ class Show < ActiveRecord::Base
   def self.most_popular_show
     rating = Show.maximum(:rating)
     Show.where("rating = ?",rating)[0]
+    # can you return a single instance instead of an array??
   end 
   
   def self.lowest_rating 
@@ -15,7 +16,7 @@ class Show < ActiveRecord::Base
   
   def self.least_popular_show 
     rating = Show.minimum(:rating)
-    Show.where("rating = ?",rating)
+    Show.where("rating = ?",rating)[0]
   end 
   
   def self.ratings_sum
