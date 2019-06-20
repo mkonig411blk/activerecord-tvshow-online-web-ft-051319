@@ -6,7 +6,7 @@ class Show < ActiveRecord::Base
   
   def self.most_popular_show
     rating = Show.maximum(:rating)
-    Song.where("rating = ?",rating)
+    Show.where("rating = ?",rating)
   end 
   
   def self.lowest_rating 
@@ -15,7 +15,7 @@ class Show < ActiveRecord::Base
   
   def self.least_popular_show 
     Show.minimum(:rating)
-    Song.where("rating = ?",rating)
+    Show.where("rating = ?",rating)
   end 
   
   def ratings_sum
